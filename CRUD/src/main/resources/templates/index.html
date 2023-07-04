@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Servicios REST con Spring</title>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <br>
+
+    <div class="contenedor">
+    <div class="contenedor-formulario">
+            <form th:action="@{/guardar}" th:object=${alumno} method="POST">
+                <label for="nombre">Nombre</label>
+                <input th:field="*{nombre}" type="text">
+                
+                <br><br>
+    
+                <label for="ap_paterno">Apellido parteno</label>
+                <input th:field="*{ap_paterno}" type="text">
+    
+                <br><br>
+    
+                <label for="ap_materno">Apellido materno</label>
+                <input th:field="*{ap_materno}" type="text">
+    
+                <br><br>
+    
+                <label for="activo">Activo</label>
+                <input th:field="*{activo}" type="checkbox" name="" id="checkActivo">
+    
+                <br><br>
+                <input type="submit" value="Guardar alumno">
+            </form>
+    
+        </div>
+        
+        <div class="contenedor-formulario2">
+        <form action="/buscar" method="get">
+			<label>Id de alumno </label>
+           <input type="text" name="id" placeholder="Ingrese el ID">
+  		   <input type="submit" value="Buscar alumno">
+        </form>
+        
+        
+    </div>
+    </div>
+    <br><br>
+		<div class="contenedor-tabla">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Apellido materno</th>
+                        <th>Activo</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="alumno : ${alumnos}">
+                        <td th:text="${alumno.id_alumno}"></td>
+                        <td th:text="${alumno.nombre}"></td>
+                        <td th:text="${alumno.ap_paterno}"></td>
+                        <td th:text="${alumno.ap_materno}"></td>
+                        <td th:text="${alumno.activo}"></td>
+                        <td><a th:href="@{/eliminar/}+${alumno.id_alumno}"> Eliminar </a></td>
+                        <td><a th:href="@{/editar/{id}(id=${alumno.id_alumno})}"> Actualizar </a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+</body>
+</html>

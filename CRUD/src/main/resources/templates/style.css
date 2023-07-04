@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(255, 243, 243);
+    color:black;
+}
+
+.contenedor{
+    display: flex;
+}
+
+
+.contenedor-formulario{
+    height:max-content;
+    padding-right: 50px;
+
+}
+
+.contenedor-formulario2{
+    height:max-content;
+
+}
+
+.contenedor-tabla{
+    border-style: groove;
+    background-color: rgb(237, 187, 187);
+}
+
+.tabla{
+    width: 100%;
+}
+
+th{
+    padding: 5px;
+    font-size:small;
+}
+
+td{
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+input[type="text"]{
+    width: 100px;
+}
+
+

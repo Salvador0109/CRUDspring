@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <title>Servicios REST con Spring</title>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <h2>Resultado de la busqueda</h2>
+    
+    <div class="contenedor-tabla">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Apellido materno</th>
+                        <th>Activo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td th:text="${alumno.id_alumno}"></td>
+                        <td th:text="${alumno.nombre}"></td>
+                        <td th:text="${alumno.ap_paterno}"></td>
+                        <td th:text="${alumno.ap_materno}"></td>
+                        <td th:text="${alumno.activo}"></td>
+                     
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  
+
+</body>
+</html>
